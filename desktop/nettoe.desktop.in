@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=netToe
+Comment=Play a game of Tic Tac Toe.
+Icon=nettoe
+
+Type=Application
+Terminal=true
+TryExec=nettoe
+Exec=@bindir@/nettoe
+
+Categories=Game;LogicGame;
+Keywords=tic;tac;toe;text;terminal;logic;multiplayer;

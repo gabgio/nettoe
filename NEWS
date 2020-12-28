@@ -1,0 +1,103 @@
+-- $Id: NEWS file for netToe version 1.5.1 --
+---------------------------------------------
+
+  The most important changes and NEWS are in this file.
+  A more detailed list of changes can be found in the ChangeLog file.
+
+nettoe-1.5.1 (21 March 2014)
+  * Improve the propagation of linker flags.
+    This is needed together with terminfo/curses.
+
+nettoe-1.5 (22 November 2013)
+  * Include some icons.
+  * Optional configuration to install desktop related files.
+  * Better adaption to desktop users.
+  * Avoid some annoying waste of screen area.
+  * Middle AI level prefers winning moves.
+  * Extensive refactoring uncovered some corner cases where
+    previous version would react contrary to expectations.
+    All logic and interoperability with those versions should
+    be intact, though.
+
+nettoe-1.4.2 (23 May 2013)
+  * Support newer automake.
+  * TCP port is configurable at build time.
+
+nettoe-1.4.1 (7 May 2013)
+  * Fixes to manual page.
+  * Improved autoconf template.
+
+nettoe-1.4.0 (25 April 2013)
+  * Portability fixes to NetBSD, GNU/OpenSolaris, and OpenIndiana.
+  * Support for terminfo/termcap control of terminal output.
+  * Curses is used by default.
+  * Network code allows restriction to IPv4 or to IPv6.
+
+nettoe-1.3.2 (17 March 2010):
+  * Dual stacked behaviour restored for eglibc 2.10.
+
+nettoe-1.3.0 (25 February 2010):
+  * Network game uses IPv4 as well as IPv6.
+  * The network code is incompatible with nettoe-1.2.* and earlier.
+    Only the server port 7501 is fixed.
+  * The name of a player can be a full name with separating spaces.
+
+nettoe-1.2.1 (3 January 2010):
+  * Small fix to autotools configuration file ./Makefile.am.
+
+nettoe-1.2.0 (30 December 2009):
+  * Randomized board view in AI-mode.
+  * A new AI-mode: "harder". This detects all threats and winning moves.
+  * Colouring is made suitable for virtual consoles, as well as for
+    terminal emulators.
+  * Networking code has been revised for predictability. Bugs removed!
+
+nettoe-1.1.0 (22 July 2001):
+  * netToe new uses Colors !
+  - Modified the parse_cmd_args(...) function to accept more than one
+    argument at time, option --no-colors added. (ref: misc.c)
+  - Added modules terminal.c and terminal.h Those file include the new
+    code to handle colors in nettoe.
+  - Added modules matrices.c and matrices.h Those files include the new
+    code to handle the nettoe board matrix.
+  - Removed netmisc.c and netmisc.h modules and  included the code in the
+    network.c and network.h modules.
+
+nettoe-1.0.6 (1 July 2001):
+  * A lot of time passed since the last release :-(
+  - Added pc-speaker beeps. (everytime player has to make a move or... take
+    a decision in the game.
+  - Added a man page for nettoe ( man nettoe )
+  - Command line options added. (--no-beep, --help, --version)  
+  - Added support for autotools (automake,autoconf...)
+  - Fixed all compilation warnings produced by gcc with the -Wall option
+    (a lot of potential bugs....)
+  - See ChangeLog for a detailed list of changes.
+
+24 June 2001:
+  * nettoe 1.0.5 is in Debian unstable, thanks to Andras Bali.
+
+nettoe-1.0.5 (6 June 2000):
+  - Why 1.0.0 to 1.0.5 ? Ehm, hmmm.... because ..... ( who cares ? ).  
+  * Now nettoe uses ports 7501, 7502 for the network game.
+  - Fixed the stupid AI ;-).
+  - Added "Hard" (not so hard) AI, removed the old Easy AI level.
+
+nettoe-1.0.0 (31 January 2000):
+  - FIXED a BUG in version 0.9b that caused the game to exit improperly.
+  - Added error debugging in the network game: now user it's adviced
+    on connection errors etc...
+
+nettoe-0.9b:
+  - Fixed bugs in the network game.
+  - Improved AI. (it still need to be improved).
+
+
+  -- Gabriele Giorgetti
+	<g.gabriele@europe.com>
+
+
+
+
+
+

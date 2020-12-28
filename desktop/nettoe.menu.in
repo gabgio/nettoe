@@ -1,0 +1,5 @@
+?package(local.nettoe):needs="text" section="Games/Board"\
+   title="netToe"\
+   longtitle="Play a game of Tic Tac Toe."\
+   command="@bindir@/nettoe"\
+   icon="@pixmapsdir@/nettoe.xpm"

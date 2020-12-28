@@ -1,0 +1,16 @@
+-- $Id: TO-DO file for netToe version 1.3.2 - released on 18 March 2010
+--------------------------------------------------------------------------
+
+  Intended goals for the next round in netToe development:
+
+  - Write netToe clients, thus providing a testing ground
+    for supporting ncurses and X11.
+
+  - Simplify the networking code beyond the recently made
+    modifications.
+
+  - Improve the computer AI to provide a learning mode.
+ 
+    Mats Erik Andersson
+     <meand@users.sourceforge.net>
+

@@ -1,0 +1,74 @@
+This text explains the message protocol used by netToe
+in case the network game mode is used.
+
+1. Initiation: each side writes the name of the player,
+   containing a character string of exactly 32 bytes length:
+  
+   Server: char name[32].
+   Client: char name[32].
+
+2. The server tosses a coin in order to choose who plays first.
+   The name of this starting player is transmitted to the client:
+   
+   Server: char name[32].
+   Client: -
+
+3. The server sends a single character, either '1' or '2', encoding
+   the starting side. The server identifies '1' as himself, and '2'
+   as the client.
+
+   Server: char.
+   Client: -
+
+4. Transmission of board after a player's move. The server side uses
+   the marker 'X' and the client side uses 'O'. This fourth step is
+   repeated as many times as is needed until a game ends.
+
+   a. Transmit "y" as char str[2], including ending null.
+      This start signal is common to all information exchanges
+      once the initial steps 1 -- 3 have been completed.
+
+   b. Transmit the full board. This makes for nine bytes,
+      as char str[9], sent in the order indicated by the
+      following board:
+
+             0 | 1 | 2
+            -----------
+	     3 | 4 | 5
+            -----------
+             6 | 7 | 9
+
+   c. Send identifying stop signal, telling which party was the
+      origin of the just transmitted board:
+        Server: "S", meaning char str[2] with null.
+        Client: "C", likewise.
+
+      The other party must recognize for this stop signal before
+      proceeding the game exchange.
+
+When a winner has been found, or a draw has occurred, a negotiation
+for continued gaming commences.
+
+5. The player using the server gets to decide if he wants to continue
+   or not. 
+
+   a. The server sends "y" as char str[2], including final null.
+   b. The server sends "n" or "y" as char str[2], depending on
+      whether the first player says "no" or "yes".
+
+6. In the case where 5b. transmits "n", the game is discontinued.
+   Otherwise, the client side performs the corresponding transaction:
+
+   a. The client sends "y" in the form of char str[2].
+   b. The client sends either "n" or "y" as char str[2], depending
+      on the player's decision to continue, or not.
+
+7. In the case where 6b. resulted in "y", the transaction scheme
+   continues at step 3.
+
+
+Observe that there is a two character string "y\0" used as an initial
+transmission hook in most situations, and that an ending hook "S\0",
+or "C\0", is used to identify which part is sending the board with
+current playing positions.
+

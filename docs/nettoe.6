@@ -1,0 +1,160 @@
+.\" nettoe man page
+.\" Process this file with: groff -man -Tascii
+.\" man page originally written by Andras Bali <bali@debian.org>
+.\" for the Debian GNU/Linux system.
+.\" Rewritten by Gabriele Giorgetti <ggdev@users.sourceforge.net>
+.\" to be included in the nettoe 1.1.0 (July 22, 2001)
+.\" Expanded by Mats Erik Andersson in later versions.
+.
+.TH NETTOE 6 "March 21, 2014" "netToe 1.5.1"
+.SH NAME
+nettoe \- Networked version of Tic Tac Toe for the console.
+.SH SYNOPSIS
+.B nettoe
+[\fIOPTIONS\fP]
+.SH DESCRIPTION
+.B netToe
+is a console-based version of the classic game "Tic Tac Toe".
+It is playable against computer AI, against a player on the same machine,
+or against another player over the network.
+.SH OPTIONS
+.TP
+\fB\-4\fP, \fB\-\-ipv4\fP
+only IPv4 networking
+.TP
+\fB\-6\fP, \fB\-\-ipv6\fP
+only IPv6 networking
+.TP
+\fB\-nc\fP, \fB\-\-no-colors\fP
+disable colors
+.TP
+\fB\-nb\fP, \fB\-\-no-beep\fP
+disable beeps
+.TP
+\fB\-h\fP, \fB\-\-help\fP
+display usage hints, then exit
+.TP
+\fB\-v\fP, \fB\-\-version\fP
+output version information, then exit
+.PP
+.SH "HOW TO PLAY VIA NETWORK"
+First decide who will host the game: you or your opponent.
+The hosting player must next do the following.
+.
+.IP * 4
+Start \fBnettoe\fP.
+.IP *
+Pick the third option (Two players over network) of the \fIMain Menu\fP.
+.IP *
+Choose the first option (Host the Game) at the \fINetwork Game Menu\fP.
+.IP *
+Type name, or nickname.
+.IP *
+Communicate the IP address to the other player.
+Hostnames work, if registered.
+We hope you know how to get your own IP address.
+.IP *
+Wait for the other player to connect to your host.
+.
+.PP
+Now the other player, the one connecting to the game server, must:
+.
+.IP o 4
+Start \fBnettoe\fP.
+.IP o
+Pick the third option (Two players over network) of the \fIMain Menu\fP.
+.IP o
+Use the second option (Connect to a host) at the \fINetwork Game Menu\fP.
+.IP o
+Type name, or nickname.
+.IP o
+Type the IP address of the server host, or its hostname.
+Examples include \fI192.168.0.5\fP and \fI::1\fP,
+or \fIfenrir.foe.org\fP and \fIlocalhost\fP.
+.IP o
+Wait for the game to start.
+.
+.PP
+Enjoy yourselves. If you have any problem, just let us know.
+.
+.SH "NETWORK PORTS"
+.B netToe
+uses TCP port \fB7501\fP as listening port of the server engine,
+unless configured otherwise during build time.
+Use "nettoe -v" to display the configured port.
+.PP
+That port must therefore be usable as destination port over the network.
+Otherwise remote games would not be possible.
+For a local game this is of course mostly irrelevant,
+but filtering firewalls might intercept connections in general.
+.
+.SH "USING THE AI MODES"
+.B netToe
+offers a mode of play where the computer acts as opponent with
+some limited built-in abilities to simulate dynamic decisions.
+Three levels of AI strength are made available:
+.
+.IP * 4
+The weaker level first checks a small set of blocking moves,
+then some winning moves, and falls back to simple moves in
+a fixed priority order.
+Since neither set is adaptive, the computer is easily fooled.
+.
+.IP *
+The normal level uses slightly larger sets of moves at each step,
+but is most importantly playing more aggressively than the
+weaker level does.
+It happens in the sense that initial checks are for winning moves,
+only later falling back to blocking moves.
+This avoids some obvious counterfeit strategy by a human player.
+.
+.IP *
+The better of the three levels is implemented differently.
+Its first action is to scan a complete set of winning moves.
+That leading nowhere, it scans through all possible blocking moves,
+and finally falls back to an ordered list of simple moves.
+Since not even this level of play is using a look-ahead search,
+a human player can set up traps, but finding those already
+demands a fair amount of insight into the game!
+.PP
+There are plans for a further level using a look-ahead search
+of depth two.
+This would improve the usefulness of \fBnetToe\fP as an
+educational tool.
+A further level, which is learning from past plays
+within each session, could also be an interesting enhancement.
+.
+.SH AVAILABILITY
+The latest version of this program can be found at
+.LP
+.RS 4
+http://nettoe.sourceforge.net/
+.RE
+.
+.SH BUGS
+Report bugs to <meand@users.sourceforge.net>.
+For a list of known bugs,
+see the BUGS file in the netToe source package.
+.
+.SH AUTHOR
+.B netToe
+is written by Gabriele Giorgetti <ggdev@users.sourceforge.net>
+and by Mats Erik Andersson <meand@users.sourceforge.net>.
+.
+.PP
+This manual page was initially written by Andras Bali <bali@debian.org>,
+for the Debian GNU/Linux system, and was later rewritten by
+Gabriele Giorgetti
+to be distributed in the \fBnetToe\fP source package.
+.
+.SH COPYRIGHT
+Copyright \(co 2000,2001 Gabriele Giorgetti,
+.RS 10
+\(co 2001 Andras Bali,
+.br
+\(co 2012,2013,2014 Mats Erik Andersson.
+.RE
+.LP
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.

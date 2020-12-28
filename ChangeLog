@@ -1,0 +1,152 @@
+-- $Id: ChangeLog for netToe version 1.5.1 --
+---------------------------------------------
+21 March 2014:
+  - Export NETTOE_LDADD to subdirectories.
+    It contains linking needed for terminfo/curses.
+  - Have the test program always return success,
+    even when TERM is not set. In the latter case,
+    use 'dumb' as terminal type.
+
+18 November 2013:
+  - Optionally install a file for Debian's menu system.
+  - Make 'applicationsdir', 'iconsdir', 'menudir', and
+    'pixmapsdir' into precious configuration variables.
+    Simplify their use in templates.
+  - Check return status of fgets(), scanf(), and system()
+    for better diagnostics.
+
+1 August 2013:
+  - Let the configure script mention location of icons.
+  - Add a section about AI in the manual.
+
+31 July 2013:
+  - New files "src/ai.c", "src/board.c", "src/board.h",
+    containing refactored portions of code, and created
+    for easier expansion and analysis.
+  - Let the AI code in middle level of difficulty be more
+    aggressive in the sense of attempting winning moves first,
+    then blocking moves. One rule replaced in order to have
+    attacks at every field of the board.
+
+30 July 2013:
+  - More refactoring.
+  - Use isatty() to abort non-interactive uses.
+
+29 July 2013:
+  - Much refactoring and simplification of code.
+  - Visual improvements and uniform messages.
+  - Allow 'q' to end all menus, all allow letter.
+
+26 July 2013:
+  - Fair randomization, removing some bugs.
+  - Better optical consistency. New messages.
+
+25 July 2013:
+  - Desktop adaption: optioinal icons and description.
+  - Fall back to menu, instead of aborting program.
+    This improves the usability for desktop users.
+
+14 May 2013:
+  - Prefer ncurses on OpenSolaris. Detect it correctly.
+  - Support autoconf-2.69 and automake-1.13.1.
+  - Make TCP port configurable at build time.
+
+7 May 2013:
+  - Improve configure.in and some macro usage.
+
+4 May 2013:
+  - Revise the manual page.
+
+25 April 2013:
+  - Support clang on FreeBSD.
+  - Curses support by default.
+
+30 December 2011:
+  - Full support for terminfo and termcap.
+  - Main menu allows answering with a character a alternative
+    to digits. The character is indicated in colour.
+  - Give away SUID and GUID for safety.
+
+17 March 2010:
+  - A compatibility alteration for the listen socket in the network
+    server code. Now glibc version 2.3, 2.7, and 2.10 behave identically
+    as to their ability to build a passive IPv6 socket. Contempory
+    libraries like glibc 2.10 use another response order in the resolver.
+
+26 February 2010:
+  -Trivial misprint in user interaction.
+
+24 February 2010:
+  - IPv6-able network code.
+  - Dual stacked IPv4/IPv6 listening socket for Linux and FreeBSD.
+    OpenBSD users must relax 'net.inet6.ip6.v6only=0' to use both
+	address families.
+  - Using a single socket pair in network mode.
+  - The only fixed tcp port in use is server-side 7501.
+  - Both network sides are able to capture an interrupted
+    network connection. They now exit gracefully.
+  - Input sanitation to avoid threats for buffer overruns.
+  - The name of a player can now contain spaces. Any input
+    white space is collaps and normalized. Custom string parsing.
+
+3 January 2010:
+  - Fixed Makefile.am in order to avoid duplicate traversal of './docs/'.
+  - Rebuild the autotool files and declare this as release 1.2.1.
+
+30 December 2009:
+  - Mats Erik Andersson has joined the project.
+  - Background colour and default text colour now follows whatever
+    choice the terminal is configured for.
+  - A board randomization is used in AI-mode. This enhances the
+    subjective impression of play variations.
+  - A harder AI-mode has been implemented. It detects all winning moves
+    for the computer, and also detects every immediate threat the
+    user is able to pose.
+  - The network protocol has been implemented anew, which fixes
+    some dubious or incorrect code passages in the previous releases.
+  - Use socket option SO_REUSEADDR to quickly reenable network play.
+
+  -- Mats Erik Andersson <meand@users.sourceforge.net>
+
+22 July 2001:
+  - Completed the code section regarding colors.
+  - netToe now uses colors !
+
+21 July 2001:
+  - Modified the parse_cmd_args(...) function to accept more than one
+    argument at time, option --no-colors added. (ref: misc.c)	
+  - Added modules terminal.c and terminal.h Those file include the new
+    code to handle colors in nettoe. 
+  - Added modules matrices.c and matrices.h Those files include the new 
+    code to handle the nettoe board matrix. 
+  - Removed netmisc.c and netmisc.h modules and  included the code in the
+    network.c and network.h modules. 
+
+01 July 2001:
+  - Written a short HOW TO PLAY guide in the README file.
+  - Written and included int the package a man page for nettoe.
+
+30 June 2001:
+  - Added the -Wall option check in configure.in (if the compiler is gcc)
+  - Fixed ALL the compilation warnings produced by gcc with -Wall
+    That was a huge list of warnings :-)
+  - Added checking for many includes in configure.in
+
+29 June 2001:
+  - Added command line argument parsing to netToe. (ref: misc.c)
+    --no-beep option added.   
+  - Added a beep function to beep the user everytime he has
+    to make a move or take a decision. (ref: misc.c)
+
+28 June 2001:
+  - Added support for autotools (autoconf,automake etc..)
+  - Fixed bug that caused nettoe to exit when the infos
+    screen was displayed. (ref: misc.c, print_infos_screen() )
+
+24 June 2001:
+  - nettoe 1.0.5 is in Debian unstable, thanks to Andras Bali.
+
+
+- old changes no more listed --
+
+  -- Gabriele Giorgetti <ggdev@users.sourceforge.net>

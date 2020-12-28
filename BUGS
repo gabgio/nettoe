@@ -1,0 +1,61 @@
+-- $Id: BUGS file for netToe version 1.4.2 --
+---------------------------------------------
+
+ Please report any bugs, or comments to: 
+  Mats Erik Andersson <meand@users.sourceforge.net>
+  Gabriele Giorgetti <ggdev@users.sourceforge.net>
+
+ Do not forget to visit htt://nettoe.sourceforge.net for more information
+ on the netToe project.
+
+
+ List of known bugs, or their solutions:
+
+nettoe-1.3.2 (17 March 2010):
+  - Inability of eglibc 2.10 to listen on IPv6 has been resolved.
+
+nettoe-1.3.0 (24 February 2010):
+  - The previous problems with premature socket closedown are solved.
+  - All uses of scanf() for strings are now using a length limit.
+
+nettoe-1.2.1 (3 January 2010):
+nettoe-1.2.0 (30 December 2009):
+  - No new bugs known at this time. The code has been tested with
+    Debian GNU/Linux, OpenBSD, and FreeBSD.
+  - The effect of premature socket closedown from the client has
+    not been addressed in this release, so the defect will persist.
+  - The networking protocol code has been revised for reliability.
+    Some defects were located and the high load should not occur
+    anymore, since the sockets transfer well defined content.
+
+  M E Andersson
+   <meand@users.sourceforge.net>
+
+nettoe-1.1.0 (22 July 2001):
+  - Bugs from version 1.0.6 are still present :-)
+  - Discovered a bug in the network game that cause the CPU
+    load of the PC of the player who is waiting for the other
+    player move, to grow till 70% 80%. That's bad. 
+
+nettoe-1.0.6 (1 July 2001):
+  - The player is not warned if the connection is lost during
+    the network game.
+    So if a player lost his connection, the other player doesn't
+    know about that.
+
+nettoe-1.0.5 (6 June 2000):
+  - The player is not warned if the connection is lost during
+    the network game.
+    So if a player lost his connection, the other player doesn't
+    know about that.
+
+  - The program exit after the infos screen is displayed 
+  
+
+
+
+-- old bugs are no more listed --
+
+
+  -- Gabriele Giorgetti 
+      <ggdev@users.sourceforge.net>

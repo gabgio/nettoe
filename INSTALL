@@ -1,0 +1,59 @@
+-- $Id: INSTALL file for netToe version 1.5.1 --
+------------------------------------------------
+ 
+
+ tar -zxvf nettoe-1.5.1.tar.gz
+ cd nettoe-1.5.1
+
+ ./configure
+ make
+ make install
+
+
+ By default nettoe gets installed into the /usr/local prefix.
+
+ You can change this with the --prefix option in the configure
+ script.
+
+     ./configure --prefix=/usr
+
+ The binary itself gets installed into the bin directory under
+ the given prefix, thus below "/usr/local/bin/" with default setting.
+ 
+ There are three configuration switches available:
+
+     ./configure --without-terminfo --with-port=7654
+
+ which will disable the use of terminal capability librarie, and thus
+ will fall back to ANSI/ECMA-48 character sequences. Overriding the
+ default TCP port 7501 is also possible.
+ 
+     ./configure --enable-desktop
+
+ This will install a desktop description file, a single pixel map,
+ and two icons, for use on graphical terminals. These go into four
+ different directories, but these can be overridden using
+
+     make applicationsdir=/usr/share/applications \
+          pixmapsdir=/usr/share/pixmaps \
+          iconsdir=/usr/share/icons \
+          install
+
+ Additionally,
+
+     ./configure --enable-desktop --enable-menu
+
+ will install a description file for Debian's menu system. It can be
+ positioned using
+
+     make menudir=/etc/menu  install
+
+ For information on how to play netToe read the README file included
+ in the source package.
+
+ Enjoy.
+
+
+  -- Mats Erik Andersson
+      <meand@users.sourceforge.net> 
+ 

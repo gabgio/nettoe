@@ -1,0 +1,75 @@
+-- $Id: README file for netToe version 1.5.1 - released 21 March 2014
+------------------------------------------------------------------------
+
+                  t h e  n e t T o e  p r o j e c t  
+                    http://nettoe.sourceforge.net
+
+
+ netToe it is a text based Tic Tac Toe game playable over the Internet.
+
+ You can play it against computer AI, a player on the same machine or
+ against another player over the network. (Internet, LAN etc.).
+
+ I think it's best to play it against a friend over Internet while you're 
+ chatting with him in IRC or ICQ or something like that.
+
+ Yet nettoe is just a classic Tic Tac Toe game (well yes, it is playable
+ over the network ) this is not so good I know. But what I didn't tell you
+ is that netToe is going to be enahnced a lot with cool features... 
+ 
+ ( A GUI version of netToe is also in development ).
+ 
+ If you dislike such games but you are interested in C programming,
+ or in Socket programming, then you can take a look at the source code.
+ 
+ Well OK let's stop that.
+
+ For information on how to build or install netToe please read the 
+ INSTALL file include with the source package.
+
+  
+
+                   -----== [ HOW TO PLAY ]==-----
+ 
+
+ I think you don't need any information on how to play a Tic Tac Toe game.
+ That's why I'm only going to explain how to play nettoe with another
+ player over the Internet or a LAN.
+
+ - First decide who will host the game. (you or your friend/opponent)
+ 
+ - Now the one who is going to host the game must (do the following): 
+   
+     1. run nettoe (Doh)
+     2. choose the option 3 (Two players over network) from the Main Menu     
+     3. choose the option 1 (Host the Game) from the Network Game Menu
+     4. type in his name or nickname (NO BLANK SPACES ALLOWED).
+     5. comunicate the IP address to the other player.
+        ( hostname also works... if resolved, of course)
+        ( I hope you know how to get your IP address...)
+     6. Just wait for the other player to connect to your host.     
+ 
+ - Now for the other player (the one who is going to connect to the hosted
+   game ):
+
+     1. run nettoe (really ?, Yaeh relly.)
+     2. choose the option 3 (Two players over network) from the Main Menu
+     3. choose the option 2 (Connect to a host) from the Network Game Menu
+     4. type your name or nickname (NO BLANK SPACES ALLOWED).
+     5. type in the IP address of the host or the hostname.
+        IP address example: 192.168.0.5, ::1
+        Hostname example  : myfriend.hostname.com (must be a valid hostname)  
+     6. Just wait for the game to start .
+
+
+ Enjoy. And if you have any problem just let me know. 
+
+
+ If you have comments or suggestions, you are welcome to mail me, and 
+ please report any bugs: Gabriele Giorgetti <ggdev@users.sourceforge.net>,
+ or better, Mats Erik Andersson <meand@users.sourceforge.net>
+
+
+ -- Gabriele Giorgetti                  Mats Erik Andersson
+     <ggdev@users.sourceforge.net>       <meand@users.sourceforge.net>
+
